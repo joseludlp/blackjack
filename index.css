@@ -1,0 +1,13 @@
+body{
+    background-color: rgba(156, 156, 156, 0.488);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+
+.cartas{
+    max-height: 150px;
+}
+
+.ocultar{
+    display: none;
+}
