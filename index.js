@@ -13,6 +13,10 @@ let asJ = 0;
 let asJ2 = 0;
 let asJ3 = 0;
 let asJ4 = 0;
+let asJ5 = 0;
+let asJ6 = 0;
+let asJ7 = 0;
+let asJ8 = 0;
 let asD = 0;
 let asD2 = 0;
 let asD3 = 0;
@@ -228,6 +232,145 @@ function calculo2(){
             blackjackD();
         }
         turno = 6;
+}
+    else if (turno == 6){
+        
+    if(carta_numero_J == 11|| carta_numero_J == 12 || carta_numero_J == 13){
+        global_jugador = global_jugador + 10
+    }
+    else if(carta_numero_J == 1){
+        global_jugador = global_jugador + 11
+        asJ5 = 1
+    }
+    else{
+        global_jugador = global_jugador + carta_numero_J
+    }
+    if(global_jugador > 21 && asJ == 1){
+        global_jugador = global_jugador - 10
+        asJ = 0
+    }
+    if(global_jugador > 21 && asJ2 == 1){
+        global_jugador = global_jugador - 10
+        asJ2 = 0
+    }
+    if(global_jugador > 21 && asJ3 == 1){
+        global_jugador = global_jugador - 10
+        asJ3 = 0
+    }
+    if(global_jugador > 21 && asJ4 == 1){
+        global_jugador = global_jugador - 10
+        asJ4 = 0
+    }
+    if(global_jugador > 21 && asJ5 == 1){
+        global_jugador = global_jugador - 10
+        asJ5 = 0
+    }
+    if(global_jugador == 21){
+        blackjack()
+    }
+    carta_jugador = carta_jugador + '    ' + carta_numero_J + palo;
+    cartas_jugador_numero.textContent = carta_jugador;
+    if (global_jugador > 21){
+        blackjackD();
+    }
+    turno = 7;
+}
+
+else if (turno == 7){
+        
+    if(carta_numero_J == 11|| carta_numero_J == 12 || carta_numero_J == 13){
+        global_jugador = global_jugador + 10
+    }
+    else if(carta_numero_J == 1){
+        global_jugador = global_jugador + 11
+        asJ6 = 1
+    }
+    else{
+        global_jugador = global_jugador + carta_numero_J
+    }
+    if(global_jugador > 21 && asJ == 1){
+        global_jugador = global_jugador - 10
+        asJ = 0
+    }
+    if(global_jugador > 21 && asJ2 == 1){
+        global_jugador = global_jugador - 10
+        asJ2 = 0
+    }
+    if(global_jugador > 21 && asJ3 == 1){
+        global_jugador = global_jugador - 10
+        asJ3 = 0
+    }
+    if(global_jugador > 21 && asJ4 == 1){
+        global_jugador = global_jugador - 10
+        asJ4 = 0
+    }
+    if(global_jugador > 21 && asJ5 == 1){
+        global_jugador = global_jugador - 10
+        asJ5 = 0
+    }
+    if(global_jugador > 21 && asJ6 == 1){
+        global_jugador = global_jugador - 10
+        asJ6 = 0
+    }
+    if(global_jugador == 21){
+        blackjack()
+    }
+    carta_jugador = carta_jugador + '    ' + carta_numero_J + palo;
+    cartas_jugador_numero.textContent = carta_jugador;
+    if (global_jugador > 21){
+        blackjackD();
+    }
+    turno = 8;
+    }
+else if (turno == 8){
+        
+    if(carta_numero_J == 11|| carta_numero_J == 12 || carta_numero_J == 13){
+        global_jugador = global_jugador + 10
+    }
+    else if(carta_numero_J == 1){
+        global_jugador = global_jugador + 11
+        asJ7 = 1
+    }
+    else{
+        global_jugador = global_jugador + carta_numero_J
+    }
+    if(global_jugador > 21 && asJ == 1){
+        global_jugador = global_jugador - 10
+        asJ = 0
+    }
+    if(global_jugador > 21 && asJ2 == 1){
+        global_jugador = global_jugador - 10
+        asJ2 = 0
+    }
+    if(global_jugador > 21 && asJ3 == 1){
+        global_jugador = global_jugador - 10
+        asJ3 = 0
+    }
+    if(global_jugador > 21 && asJ4 == 1){
+        global_jugador = global_jugador - 10
+        asJ4 = 0
+    }
+    if(global_jugador > 21 && asJ5 == 1){
+        global_jugador = global_jugador - 10
+        asJ5 = 0
+    }
+    if(global_jugador > 21 && asJ6 == 1){
+        global_jugador = global_jugador - 10
+        asJ6 = 0
+    }
+    if(global_jugador > 21 && asJ6 == 1){
+        global_jugador = global_jugador - 10
+        asJ7 = 0
+    }
+    if(global_jugador == 21){
+        blackjack()
+    }
+    carta_jugador = carta_jugador + '    ' + carta_numero_J + palo;
+    cartas_jugador_numero.textContent = carta_jugador;
+    if (global_jugador > 21){
+        blackjackD();
+    }
+    turno = 9;
 }
     console.log('dealer' + global_dealer);
     console.log('jugador' +global_jugador);
