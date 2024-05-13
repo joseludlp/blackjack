@@ -8,11 +8,13 @@ let turno = 0
 let global_dealer = 0
 let global_jugador = 0;
 let asJ = 0;
-let asD = 0;
 let asJ2 = 0;
-let asD2 = 0;
 let asJ3 = 0;
 let asJ4 = 0;
+let asD = 0;
+let asD2 = 0;
+let asD3 = 0;
+let asD4 = 0;
 let turnoS = 0;
 
 function empezar() {
@@ -121,6 +123,7 @@ function calculo2(){
             global_dealer = global_dealer + 11
             asD2 = 1
         }
+        
         else{
             global_dealer = global_dealer + carta_numero_D
         }
@@ -163,7 +166,6 @@ function calculo2(){
             }
             carta_jugador = carta_jugador + '    ' + carta_numero_J + palo;
             cartas_jugador_numero.textContent = carta_jugador;
-            turno = 3;
             if (global_jugador > 21){
                 blackjackD();
             }
@@ -202,7 +204,6 @@ function calculo2(){
         }
         carta_jugador = carta_jugador + '    ' + carta_numero_J + palo;
         cartas_jugador_numero.textContent = carta_jugador;
-        turno = 3;
         if (global_jugador > 21){
             blackjackD();
         }
@@ -227,7 +228,7 @@ function stand(){
             stop()
         }, 2000);
     }
-    else if (global_dealer == global_jugador){
+    else if (global_dealer > 17 && (global_dealer == global_jugador)){
         cartas_dealer_numero.textContent = carta_dealer;
         setTimeout(function () {
             alert('empate')
@@ -247,6 +248,8 @@ function stop(){
         blackjack()
     }
 }
+
+
 
 function blackjack(){
     alert('has ganado')
@@ -285,26 +288,134 @@ function calculoS(){
 
 function calculoS2(){
     if (turnoS == 0){
-        carta_dealer = carta_dealer + '    ' + carta_numero_D + palo;
+        cartas_dealer_numero.textContent = carta_dealer;
         if(carta_numero_D == 11|| carta_numero_D == 12 || carta_numero_D == 13){
             global_dealer = global_dealer + 10
-        }
-        else if(carta_numero_D == 1){
-            global_dealer = global_dealer + 11
-            asD2 = 1
         }
         else{
             global_dealer = global_dealer + carta_numero_D
         }
+        if(carta_numero_D == 1){
+            global_dealer = global_dealer + 11
+            asD3 = 1
+        }
+        
         if(global_dealer > 21 && asD == 1){
             global_dealer = global_dealer - 10
             asD = 0
         }
+        if(global_dealer > 21 && asD2 == 1){
+            global_dealer = global_dealer - 10
+            asD2 = 0
+        }
+       
         if(global_dealer == 21){
             blackjackD()
         }
-        turno = 4;
+        if(global_dealer > 17 || global_dealer == 17){
+            setTimeout(function () {
+                stop()
+            }, 2000);
+        }
+        if (global_dealer > 21){
+            blackjack();
+        }
+        turnoS = 1;
+        setTimeout(function () {
+            barajaSD()
+        }, 2000);
     }
+    if (turnoS == 1){
+        carta_dealer = carta_dealer + '    ' + carta_numero_D + palo;
+        cartas_dealer_numero.textContent = carta_dealer;
+        if(carta_numero_D == 11|| carta_numero_D == 12 || carta_numero_D == 13){
+            global_dealer = global_dealer + 10
+        }
+        else{
+            global_dealer = global_dealer + carta_numero_D
+        }
+        if(carta_numero_D == 1){
+            global_dealer = global_dealer + 11
+            asD3 = 1
+        }
+        
+        if(global_dealer > 21 && asD == 1){
+            global_dealer = global_dealer - 10
+            asD = 0
+        }
+        if(global_dealer > 21 && asD2 == 1){
+            global_dealer = global_dealer - 10
+            asD2 = 0
+        }
+        if(global_dealer > 21 && asD3 == 1){
+            global_dealer = global_dealer - 10
+            asD3 = 0
+        }
+        
+        
+        if(global_dealer == 21){
+            blackjackD()
+        }
+        if(global_dealer > 17 || global_dealer == 17){
+            setTimeout(function () {
+                stop()
+            }, 2000);
+        }
+        if (global_dealer > 21){
+            blackjack();
+        }
+        turnoS = 2
+        setTimeout(function () {
+            barajaSD()
+        }, 2000);
+    }
+    if (turnoS == 2){
+        carta_dealer = carta_dealer + '    ' + carta_numero_D + palo;
+        cartas_dealer_numero.textContent = carta_dealer;
+        if(carta_numero_D == 11|| carta_numero_D == 12 || carta_numero_D == 13){
+            global_dealer = global_dealer + 10
+        }
+        else{
+            global_dealer = global_dealer + carta_numero_D
+        }
+        if(carta_numero_D == 1){
+            global_dealer = global_dealer + 11
+            asD4 = 1
+        }
+        
+        if(global_dealer > 21 && asD == 1){
+            global_dealer = global_dealer - 10
+            asD = 0
+        }
+        if(global_dealer > 21 && asD2 == 1){
+            global_dealer = global_dealer - 10
+            asD2 = 0
+        }
+        if(global_dealer > 21 && asD3 == 1){
+            global_dealer = global_dealer - 10
+            asD3 = 0
+        }
+        if(global_dealer > 21 && asD4 == 1){
+            global_dealer = global_dealer - 10
+            asD4 = 0
+        }
+        
+        if(global_dealer == 21){
+            blackjackD()
+        }
+        if(global_dealer > 17 || global_dealer == 17){
+            setTimeout(function () {
+                stop()
+            }, 2000);
+        }
+        if (global_dealer > 21){
+            blackjack();
+        }
+        setTimeout(function () {
+            barajaSD()
+        }, 2000);
+    }
+
 }
 
 // function calculo() {
