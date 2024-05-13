@@ -9,5 +9,9 @@ body{
 }
 
 .ocultar{
-    display: none;
+    visibility: hidden;
+}
+
+.mostrar{
+    visibility: visible;
 }
