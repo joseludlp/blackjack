@@ -387,8 +387,10 @@ function hit(){
 }
 
 function stand(){
+    opc2.classList.remove('mostrar');
+    opc.classList.remove('mostrar');
     opc2.classList.add('ocultar');
-    opc.classList.add('ocultar')
+    opc.classList.add('ocultar');
     if (global_dealer > 17 || global_dealer == 17){
         cartas_dealer_numero.textContent = carta_dealer;
         setTimeout(function () {
